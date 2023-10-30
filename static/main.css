@@ -43,3 +43,35 @@ code {
 .small {
     font-size: 0.75rem;
 }
+
+.large {
+    font-size: 0.8rem;
+
+}
+
+.tablink {
+    background-colour: #7dc388; 
+    color: black;
+    float: left; 
+    border: none; 
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px; 
+    font-size: 15px; 
+    width: 25%;
+}
+
+.tabcontent { 
+    color: black; 
+    display: none; 
+    padding: 100px 20px; 
+    height: 100%; 
+
+}
+
+.tablink:hover {
+    background-color: #7D9480 
+}
+
+
+

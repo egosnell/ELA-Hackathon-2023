@@ -1,19 +1,35 @@
 <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
 
-<body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
-        </header>
-    </div>
-</body>
+<div class="tab"> 
+<button class="tablink" onclick="openTab(event, 'Home')">Home</button>
+<button class="tablink" onlick="openTab(event, 'About ACAP')">About ACAP</button>
+<button class="tablink" onlick="openTab(event, 'The Problem')">The Problem</button> 
+<button class="tablink" onlick="openTab(event, 'Data')">Data </button>
+</div>
+
+<div id="About ACAP" class="tabcontent">
+    <h3>About ACAP</h3>
+    <p>page content</p>
+</div>
+
+<div id="Home" class="tabcontent">
+    <h3>Home</h3>
+    <p>page content</p>
+</div>
+
+<div id="The Problem" class="tabcontent">
+    <h3>The Problem</h3>
+    <p>page content</p>
+</div>
+
+<div id="Data" class="tabcontent">
+    <h3>Data</h3>
+    <p>page content</p>
+</div>
+
+<script src="index.js"></script>
 
 </html>
