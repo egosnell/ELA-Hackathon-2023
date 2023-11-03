@@ -1,0 +1,31 @@
+/* Apply styles to the about-header section */
+.about-header {
+    background-image: url('restigouche-river-in.jpg'); /* Specify the path to your background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* Apply styles to the about-content section */
+.about-content {
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+}
+
+/* Additional styling for the container and content within the about-content section */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* You can add more styles and customize the page as needed */
