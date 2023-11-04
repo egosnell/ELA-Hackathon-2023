@@ -1,5 +1,14 @@
 from flask import Flask, render_template
 
+import pandas as pd 
+import json 
+import plotly
+import plotly.express as px 
+
+
+
+
+
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET', 'POST'])
@@ -19,7 +28,13 @@ def The_Problem():
 @app.route("/Data", methods = ['GET', 'POST'])
 def Data():
     active_page = "data"
-    return render_template("data.html", title="Catfish Coders", active_page=active_page)
+    df = px.data.Trial()
+    figl = px.bar(df x = "MonitoringLocationID")
+
+    return render_template("data.html", title="Catfish Coders", active_page=active_page, title="Home")
+ 
 
 if __name__ == '__main__':
    app.run(debug = True)
+
+
