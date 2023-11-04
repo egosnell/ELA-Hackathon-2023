@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 import pandas as pd 
 import json 
@@ -6,10 +6,7 @@ import plotly
 import plotly.express as px 
 
 
-
-
-
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 @app.route("/", methods = ['GET', 'POST'])
 def Home():
@@ -28,12 +25,14 @@ def The_Problem():
 @app.route("/Data", methods = ['GET', 'POST'])
 def Data():
     active_page = "data"
-    df = px.data.Trial()
-    figl = px.bar(df x = "MonitoringLocationID")
-
-    return render_template("data.html", title="Catfish Coders", active_page=active_page, title="Home")
+    site_list = [];
+    if request.method == 'POST':
+        for s in ['Site1','Site2']:
+            site = request.form.get(s)
+            site_list = [site_list, site];
+        return render_template("data.html", title="Catfish Coders", active_page=active_page, site_list=site_list)
+    return render_template("data.html", title="Catfish Coders", active_page=active_page)
  
-
 if __name__ == '__main__':
    app.run(debug = True)
 

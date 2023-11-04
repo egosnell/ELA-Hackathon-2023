@@ -2,20 +2,44 @@
 
 {% block content %}
 <head>
-    <h1>Data</h1>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>  <!-- Include D3.js -->
 </head>
-    <div class="site-header-logo">
-        <hl class="text-center">
-            Data 
-        </hl>
+<body>
+    <form method="POST" action="/Data">
+        Site 1<input type="checkbox" value="1" name="Site1">
+        Site 2<input type="checkbox" value="2" name="Site2">
+        <input type="submit">
+    <div>
+        <ul>
+            {% for s in site_list %}
+                {% <li>s</li> %}
+            {% endfor %}
+        </ul>
     </div>
+    </form>
+    <div id="plotly-plot"></div>
+    <script>
+        // Load CSV data using D3.js
+        d3.csv('/static/FecalColiform.csv').then(function(data) {
+            var trace = {
+                x: data.map(row => row.ActivityStartDate),
+                y: data.map(row => row.ResultValue),
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'CSV Data'
+            };
 
-    <div class="row p-4">
-        <div class="card m-auto" style="width: 90%;">
-            <div id ="chart1"></div>
-            <p> uhuhuhuhu</p>
-        </div>
-    </div>
-</html> 
+            var layout = {
+                title: 'CSV Data Plot',
+                xaxis: { title: 'ActivityStartDate' },
+                yaxis: { title: 'ResultValue' }
+            };
 
+            var plotData = [trace];
+
+            Plotly.newPlot('plotly-plot', plotData, layout);
+        });
+    </script>
+</body>
 {% endblock %}
