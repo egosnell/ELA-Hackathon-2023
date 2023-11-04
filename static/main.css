@@ -22,7 +22,7 @@ code {
 }
 
 .App-header {
-    background-color: #282c34;
+    background-color: #134fc7;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@ code {
 }
 
 .tablink {
-    background-colour: #7dc388; 
+    background-colour: #3aaf4c; 
     color: black;
     float: left; 
     border: none; 
@@ -70,7 +70,7 @@ code {
 }
 
 .tablink:hover {
-    background-color: #7D9480 
+    background-color: #7f9482 
 }
 
 
