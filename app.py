@@ -29,9 +29,12 @@ def Data():
     if request.method == 'POST':
         for s in ['Site1','Site2']:
             site = request.form.get(s)
-            site_list = [site_list, site];
+            if site != None:
+                print(site)
+                site_list.append(site)
         return render_template("data.html", title="Catfish Coders", active_page=active_page, site_list=site_list)
-    return render_template("data.html", title="Catfish Coders", active_page=active_page)
+    else:
+        return render_template("data.html", title="Catfish Coders", active_page=active_page)
  
 if __name__ == '__main__':
    app.run(debug = True)
