@@ -46,13 +46,12 @@ if __name__ == '__main__':
 @app.route("/Data", methods=['GET', 'POST'])
 def Data():
     active_page = "data"
-    site_list = []
-
+    site_list = [];
     if request.method == 'POST':
         for s in ['LorneUp','LorneDown','StRestUp','StRestDown','SouthBayUp','SouthBayDown','INUP','INDN',
                   'MCUP','MCDN','LittleRiverUp','LittleRiverDown','HazenCreekUp','RedHeadMarsh']:
             site = request.form.get(s)
-            if site is not None:
+            if site != None:
                 print(site)
                 site_list.append(site)
 
