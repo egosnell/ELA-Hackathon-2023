@@ -1,7 +1,69 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <!-- Page title banner over Image 1 -->
+  <div class="page-title-banner">
+    <h1 class="display-4"><strong>THE PROBLEM ACAP FACES</strong></h1>
+  </div>
 
-    <h1>Hello Name</h1>
+  <!-- Insert your images here -->
+  <div class="text-center">
+    <div class="lead-container">
+      <p class="lead text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique 
+        aspernatur libero voluptate? Consequatur, molestiae quam eveniet cupiditate dicta repudiandae 
+        reprehenderit sint dolores veniam praesentium perspiciatis nihil possimus voluptas pariatur 
+        ipsam nulla quae sequi aliquid dolor quas distinctio, magnam velit repellat.</p>
+    </div>
+    <div>
+    <img src="{{ url_for('static', filename='Photos/image1.jpg') }}" alt="Image 1" class="img-fluid">
+    </div>
+    <div class="lead-container">
+      <p class="lead text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique 
+        aspernatur libero voluptate? Consequatur, molestiae quam eveniet cupiditate dicta repudiandae 
+        reprehenderit sint dolores veniam praesentium perspiciatis nihil possimus voluptas pariatur 
+        ipsam nulla quae sequi aliquid dolor quas distinctio, magnam velit repellat.</p>
+    </div>
+    <img src="{{ url_for('static', filename='Photos/image2.jpg') }}" alt="Image 2" class="img-fluid">
+    <div class="lead-container">
+      <p class="lead text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique 
+        aspernatur libero voluptate? Consequatur, molestiae quam eveniet cupiditate dicta repudiandae 
+        reprehenderit sint dolores veniam praesentium perspiciatis nihil possimus voluptas pariatur 
+        ipsam nulla quae sequi aliquid dolor quas distinctio, magnam velit repellat.</p>
+    </div>
+  </div>
+  
+  <style>
+    .display-4 {
+      color: #fff;
+      margin: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 
+    .page-title-banner {
+      background-image: url("{{ url_for('static', filename='Photos/image3.jpg') }}");
+      background-size: cover;
+      background-position: center; /* Center horizontally */
+      padding: 50px 0; /* Remove horizontal padding, keep only top and bottom padding */
+      text-align: center;
+      color: #fff;
+      width: 100%;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      color: #333;
+      margin: 20px 0;
+    }
+
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    .lead-container {
+      max-width: 75%; /* Adjust the maximum width as per your preference */
+      margin: 0 auto; /* Center the container horizontally */
+    }
+  </style>
 {% endblock %}

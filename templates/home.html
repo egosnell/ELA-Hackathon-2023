@@ -1,13 +1,53 @@
 {% extends 'base.html' %}
 
-
-
-
 {% block content %}
+  <!-- Page title banner over Image 1 -->
+  <div class="page-title-banner">
+    <h1 class="display-4"><strong>HOME</strong></h1>
+  </div>
 
+  <!-- Insert your images here -->
+  <div class="text-center">
+    <img src="{{ url_for('static', filename='Photos/image1.jpg') }}" alt="Image 1" class="img-fluid">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis possimus qui officiis 
+      nesciunt odio rem. Fugiat optio deserunt assumenda totam aut magni accusantium! Molestias placeat 
+      quibusdam quidem debitis nemo modi, vero et recusandae voluptate accusamus voluptates 
+      doloribus facere ut repellendus.</p>
+    <img src="{{ url_for('static', filename='Photos/image2.jpg') }}" alt="Image 2" class="img-fluid">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis possimus qui officiis 
+      nesciunt odio rem. Fugiat optio deserunt assumenda totam aut magni accusantium! Molestias placeat 
+      quibusdam quidem debitis nemo modi, vero et recusandae voluptate accusamus voluptates 
+      doloribus facere ut repellendus.</p>
+  </div>
 
+  <p class="lead text-center">Sample Text</p>
+  
+  <style>
+    .display-4 {
+      color: #fff;
+      margin: 0;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 
+    .page-title-banner {
+      background-image: url("{{ url_for('static', filename='Photos/image3.jpg') }}");
+      background-size: cover;
+      background-position: center; /* Center horizontally */
+      padding: 50px 0; /* Remove horizontal padding, keep only top and bottom padding */
+      text-align: center;
+      color: #fff;
+      width: 100%;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      color: #333;
+    }
+
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+  </style>
 {% endblock %}
-
-
-
