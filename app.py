@@ -23,19 +23,24 @@ def The_Problem():
     title = "The Problem ACAP Faces"
     return render_template("problem.html", title="Catfish Coders", active_page=active_page, page_title=title)
 
-@app.route("/Data", methods = ['GET', 'POST'])
+@app.route("/Data", methods=['GET', 'POST'])
 def Data():
     active_page = "data"
-    site_list = [];
+    site_list = []
+
     if request.method == 'POST':
-        for s in ['Site1','Site2']:
+        for s in ['Site1', 'Site2']:
             site = request.form.get(s)
-            if site != None:
+            if site is not None:
                 print(site)
                 site_list.append(site)
-        return render_template("data.html", title="Catfish Coders", active_page=active_page, site_list=site_list)
-    else:
-        return render_template("data.html", title="Catfish Coders", active_page=active_page)
+
+    # Ensure site_list is always defined
+    if not site_list:
+        site_list = []
+
+    return render_template("data.html", title="Catfish Coders", active_page=active_page, site_list=site_list)
+
  
 if __name__ == '__main__':
    app.run(debug = True)
