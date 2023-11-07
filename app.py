@@ -23,6 +23,26 @@ def The_Problem():
     title = "The Problem ACAP Faces"
     return render_template("problem.html", title="Catfish Coders", active_page=active_page, page_title=title)
 
+@app.route("/Discussion", methods = ['GET', 'POST'])
+def Discussion():
+    active_page = "discussion"
+    return render_template("discussion.html", title="Catfish Coders", active_page=active_page)
+
+@app.route("/Thread1", methods = ['GET', 'POST'])
+def Thread1():
+    active_page = "thread1"
+    return render_template("thread1.html", title="Catfish Coders", active_page=active_page)
+if __name__ == '__main__':
+   app.run(debug = True)
+
+@app.route("/Thread2", methods = ['GET', 'POST'])
+def Thread2():
+    active_page = "thread2"
+    return render_template("thread2.html", title="Catfish Coders", active_page=active_page)
+if __name__ == '__main__':
+   app.run(debug = True)
+
+
 @app.route("/Data", methods=['GET', 'POST'])
 def Data():
     active_page = "data"
@@ -51,4 +71,10 @@ def filter_csv_by_site(input_csv, location_id):
     filteredData = loadedData[loadedData['MonitoringLocationID'] == location_id]
 
     return filteredData
+
+@app.route("/Discussion", methods = ['GET', 'POST'])
+def Discussion():
+    active_page = "discussion"
+    return render_template("discussion.html", title="Catfish Coders", active_page=active_page)
+
 
