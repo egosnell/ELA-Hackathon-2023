@@ -29,7 +29,8 @@ def Data():
     site_list = []
 
     if request.method == 'POST':
-        for s in ['Site1', 'Site2']:
+        for s in ['LorneUp','LorneDown','StRestUp','StRestDown','SouthBayUp','SouthBayDown','INUP','INDN',
+                  'MCUP','MCDN','LittleRiverUp','LittleRiverDown','HazenCreekUp','RedHeadMarsh']:
             site = request.form.get(s)
             if site is not None:
                 print(site)
@@ -51,21 +52,3 @@ def filter_csv_by_site(input_csv, location_id):
 
     return filteredData
 
-@app.route("/Discussion", methods = ['GET', 'POST'])
-def Discussion():
-    active_page = "discussion"
-    return render_template("discussion.html", title="Catfish Coders", active_page=active_page)
-
-@app.route("/Thread1", methods = ['GET', 'POST'])
-def Thread1():
-    active_page = "thread1"
-    return render_template("thread1.html", title="Catfish Coders", active_page=active_page)
-if __name__ == '__main__':
-   app.run(debug = True)
-
-@app.route("/Thread2", methods = ['GET', 'POST'])
-def Thread2():
-    active_page = "thread2"
-    return render_template("thread2.html", title="Catfish Coders", active_page=active_page)
-if __name__ == '__main__':
-   app.run(debug = True)
