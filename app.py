@@ -62,19 +62,6 @@ def Data():
 
     return render_template("data.html", title="Catfish Coders", active_page=active_page, site_list=site_list)
 
- 
 if __name__ == '__main__':
    app.run(debug = True)
-
-def filter_csv_by_site(input_csv, location_id):
-    loadedData = pd.read_csv(input_csv)
-    filteredData = loadedData[loadedData['MonitoringLocationID'] == location_id]
-
-    return filteredData
-
-@app.route("/Discussion", methods = ['GET', 'POST'])
-def Discussion():
-    active_page = "discussion"
-    return render_template("discussion.html", title="Catfish Coders", active_page=active_page)
-
 
