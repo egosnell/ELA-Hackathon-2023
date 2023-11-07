@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<body style="background-color: rgba(188, 208, 167, 0.609)"> 
+</body>
+
   <!-- Page title banner over Image 1 -->
   <div class="page-title-banner">
     <h1 class="display-4"><strong>HOME</strong></h1>
@@ -8,12 +11,12 @@
 
   <!-- Insert your images here -->
   <div class="text-center">
-    <img src="{{ url_for('static', filename='Photos/image1.jpg') }}" alt="Image 1" class="img-fluid">
+   
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis possimus qui officiis 
       nesciunt odio rem. Fugiat optio deserunt assumenda totam aut magni accusantium! Molestias placeat 
       quibusdam quidem debitis nemo modi, vero et recusandae voluptate accusamus voluptates 
       doloribus facere ut repellendus.</p>
-    <img src="{{ url_for('static', filename='Photos/image2.jpg') }}" alt="Image 2" class="img-fluid">
+      <img src="{{ url_for('static', filename='Photos/marsh.jpg') }}" alt="Image 1" class="img-fluid">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis possimus qui officiis 
       nesciunt odio rem. Fugiat optio deserunt assumenda totam aut magni accusantium! Molestias placeat 
       quibusdam quidem debitis nemo modi, vero et recusandae voluptate accusamus voluptates 
@@ -30,7 +33,7 @@
     }
 
     .page-title-banner {
-      background-image: url("{{ url_for('static', filename='Photos/image3.jpg') }}");
+      background-image: url("{{ url_for('static', filename='Photos/wetland.jpg') }}");
       background-size: cover;
       background-position: center; /* Center horizontally */
       padding: 50px 0; /* Remove horizontal padding, keep only top and bottom padding */

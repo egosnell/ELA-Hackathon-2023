@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<body style="background-color: rgba(188, 208, 167, 0.609)"> 
+</body>
+
+<p1> This is a prototype for the interactive tool to be created. This shows a small subset of the data: Fecal Coliform monitoring 
+    results over 30 years. This tool allows you to interact with the results by changing date ranges and selecting values by site. 
+    Values over the Canadian Drinking Water Guideline (0 CFU/100mL) have been identified using a star symbols. </p1>
+
+<p></p>
+
+<p></p>
+
+
 <head>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>  <!-- Include D3.js -->
@@ -42,7 +55,7 @@
                     return row.MonitoringLocationID === site;
                 });
     
-                var thresholdValue = 100;  // Set your threshold value here
+                var thresholdValue = 0;  // Set your threshold value here
     
                 var trace = {
                     x: filteredData.map(row => row.ActivityStartDate),
@@ -63,9 +76,9 @@
             });
     
             var layout = {
-                title: 'CSV Data Plot',
+                title: 'Fecal Coliform Monitoring by Site',
                 xaxis: { title: 'ActivityStartDate' },
-                yaxis: { title: 'ResultValue' }
+                yaxis: { title: 'CFU/100mL ' }
             };
     
             Plotly.newPlot('plotly-plot', plotData, layout);
