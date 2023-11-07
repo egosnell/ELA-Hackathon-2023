@@ -20,7 +20,8 @@ def About_ACAP():
 @app.route("/The_Problem", methods = ['GET', 'POST'])
 def The_Problem():
     active_page = "problem"
-    return render_template("problem.html", title="Catfish Coders", active_page=active_page)
+    title = "The Problem ACAP Faces"
+    return render_template("problem.html", title="Catfish Coders", active_page=active_page, page_title=title)
 
 @app.route("/Data", methods = ['GET', 'POST'])
 def Data():
