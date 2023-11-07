@@ -40,5 +40,9 @@ def Data():
 if __name__ == '__main__':
    app.run(debug = True)
 
+def filter_csv_by_site(input_csv, location_id):
+    loadedData = pd.read_csv(input_csv)
+    filteredData = loadedData[loadedData['MonitoringLocationID'] == location_id]
 
+    return filteredData
 

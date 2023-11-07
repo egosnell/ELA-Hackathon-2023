@@ -7,8 +7,8 @@
 </head>
 <body>
     <form method="POST" action="/Data">
-        Site 1<input type="checkbox" value="1" name="Site1">
-        Site 2<input type="checkbox" value="2" name="Site2">
+        INUP<input type="checkbox" value="INUP" name="Site1">
+        INDN 2<input type="checkbox" value="INDN" name="Site2">
         <input type="submit">
     <div>
         <ul>
@@ -22,24 +22,43 @@
     <script>
         // Load CSV data using D3.js
         d3.csv('/static/FecalColiform.csv').then(function(data) {
-            var trace = {
-                x: data.map(row => row.ActivityStartDate),
-                y: data.map(row => row.ResultValue),
-                type: 'scatter',
-                mode: 'lines+markers',
-                name: 'CSV Data'
-            };
-
+            var site_list = {{ site_list | tojson | safe }};  // Get the site list from Flask
+    
+            var plotData = [];
+            site_list.forEach(function(site) {
+                var filteredData = data.filter(function(row) {
+                    return row.MonitoringLocationID === site;
+                });
+    
+                var thresholdValue = 100;  // Set your threshold value here
+    
+                var trace = {
+                    x: filteredData.map(row => row.ActivityStartDate),
+                    y: filteredData.map(row => row.ResultValue),
+                    type: 'scatter',
+                    mode: 'markers',
+                    name: site,  // Use the site name as the trace name
+                    marker: {
+                        symbol: filteredData.map(row => row.ResultValue > thresholdValue ? 'star' : 'circle'),
+                        size: filteredData.map(row => row.ResultValue > thresholdValue ? 15 : 10),
+                        line: {
+                            width: 2
+                        }
+                    }
+                };
+    
+                plotData.push(trace);
+            });
+    
             var layout = {
                 title: 'CSV Data Plot',
                 xaxis: { title: 'ActivityStartDate' },
                 yaxis: { title: 'ResultValue' }
             };
-
-            var plotData = [trace];
-
+    
             Plotly.newPlot('plotly-plot', plotData, layout);
         });
     </script>
+    
 </body>
 {% endblock %}
