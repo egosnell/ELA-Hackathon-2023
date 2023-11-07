@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
-
+<head>
+ 
+        <title>{{ title }}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+ </head>
 {% block content %}
 
-    <h1>Hello Name</h1>
+<div class="tab problem"
+    <p1>A community is strongest when connected through a common goal. For the city of St. John New Brunswick, everyday life is centred around the water. From the industry it creates to the recreation it provides, it courses through the heart of the city. This presents a valuable opportunity to bring citizens into ACAP St. John’s monitoring and empower them with the information they need to become stakeholders in their environments. 
+
+        This is why our team is putting together an interactive data visualiser accessible to every community member, or anyone else looking to access the invaluable decades of research collected.  
+    </p1>
+</div>
 
 {% endblock %}
